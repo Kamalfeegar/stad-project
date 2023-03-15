@@ -1,0 +1,12 @@
+.headern{
+    display: flex;
+    background-color: peru;
+    justify-content: space-around;
+    height: 200px;
+}
+
+.CleaningServicesIcon {
+    background-color: green;
+    color: aliceblue;
+    font-size: large;
+}
