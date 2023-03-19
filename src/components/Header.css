@@ -1,12 +1,61 @@
-.headern{
-    display: flex;
-    background-color: peru;
-    justify-content: space-around;
-    height: 200px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+:root {
+    --font-style: 'Nuniti Sans', sans-serf;
 }
 
-.CleaningServicesIcon {
-    background-color: green;
-    color: aliceblue;
-    font-size: large;
+body {
+    font-family: var(--font-style);
+    background-color: #eae8e1;
+    
+
 }
+.headern {
+    position: sticky;top: 0px;
+    
+}
+
+
+.header_ul {
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 25px 0;
+    
+    border: 1px solid #eae8e1;
+    background-color: #eae8e1;
+    box-shadow: 0 4px 8px 0 #00FFFF, 0 6px 20px 0 rgba(0, 0, 0, 0.19, green, blue, alpha);
+
+}
+.header_li{
+    margin: auto;
+    color: rgb(7, 8, 8);
+    font-size: 20px;
+    cursor: pointer;
+}
+.header_li:after{
+    display: block;
+}
+header_li :hover :after {
+transform: scaleX(1);
+}
+
+.btn {
+    background-color: #18181b;;
+    color: white;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn :hover :after {
+    transform: scaleX(1);
+    }
+
+    .inne {
+        display: flex;
+    }
+
+    
+
