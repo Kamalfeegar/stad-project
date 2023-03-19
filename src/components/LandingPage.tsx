@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
+import './LandingPage.css'
+
 
 
 
@@ -12,17 +14,29 @@ function LandingPage() {
 
   } 
   return (
-    <div>
+    
+    <div className='article'>
+
+
       
       <h1>Vi Städar fint <br/> hemma hos dig!</h1>
-      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
-      <input type='text' className='postnummer'/>
-      <button>VÄLJTJÄNST</button>
+      <h3>Varför vänta när det kan se fint ut!!</h3>
 
-      <button onClick={handleClick}>Gå Vidare</button>
-     
+      <div className='ibp'>
+    <input type='text' className='postnummer' placeholder='POSTNUMMER'/>
+    <button className='postbtn' onClick={handleClick}>Gå Vidare</button>
+      </div>
       
+      <div className='inne'>
+        
+      <div><h1>Basic</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
+      <div><h1>Topp</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
+      <div><h1>Diamant</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
+      <div><h1>Fönster tvätt</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
+      
+    </div>
 
+     
     </div>
   );
 }
