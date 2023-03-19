@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppind&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Popins' sans-serif;
+}
+
+.footer {
+    display: flex;
+    color: #fffefe;
+    padding: 2rem 0;
+    height: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #000000;
+
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.footer h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.links li {
+    list-style: none;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.registration {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration input {
+    padding: 10px;
+    font-weight: 100;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    margin: 1rem 0;
+}
+
+.button {
+    border: none;
+    padding: 12px 0;
+    border-radius: 20px ;
+    cursor: pointer;
+}
+
+.adress {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.social {
+    display: flex;
+    list-style: none;
+}
+.social li {
+    margin: 0 8px;
+    cursor: progress;
+    font-size: 18px;
+}
