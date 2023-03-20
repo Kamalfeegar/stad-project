@@ -18,9 +18,13 @@ function LandingPage() {
     <div className='article'>
 
 
-      
+      <div className='img-text'>
       <h1>Vi Städar fint <br/> hemma hos dig!</h1>
       <h3>Varför vänta när det kan se fint ut!!</h3>
+
+      <img className='banner' src="cleaningPic.jpg" />
+
+    </div>
 
       <div className='ibp'>
     <input type='text' className='postnummer' placeholder='POSTNUMMER'/>
