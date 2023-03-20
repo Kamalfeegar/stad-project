@@ -19,10 +19,10 @@ function LandingPage() {
 
 
       <div className='img-text'>
-      <h1>Vi Städar fint <br/> hemma hos dig!</h1>
-      <h3>Varför vänta när det kan se fint ut!!</h3>
+      <h1 className='titel1'>Vi Städar fint <br/> hemma hos dig!</h1>
+      <h3 className='titel3'>Varför vänta när det kan se fint ut!!</h3>
 
-      <img className='banner' src="cleaningPic.jpg" />
+      <img className='banner' src="cleaningPic.jpg" height={500} width={1000} />
 
     </div>
 
