@@ -24,6 +24,7 @@ function Footer() {
         <input type="email" name='email' className='email' placeholder='skriv din mail här' />
         <button type='submit' className='button'>Subscribe Now</button>
       </form>
+      <div className='Copyright'><h3>&copy; 2023 Städa Fint</h3></div>
       </div>
 
       <div className="box">
