@@ -40,3 +40,49 @@
     margin-bottom: 1rem;
     font-weight: bold;
 }
+
+
+
+.titel1{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 200px;
+}
+
+.titel3 {
+    position: absolute;
+    margin-left: 500px; 
+    margin-top: 300px;  
+}
+
+
+
+
+#boxes { 
+    margin-top: 50px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px;
+    column-gap: 200px;
+    width: 200px;
+    height: 200px;
+
+  } 
+
+  .box1, .box2, .box3,.box4 {
+	border: 1px black solid;
+	width: 200px;
+    height: 200px;
+   
+} 
+
+.box1 {
+
+    margin-left: 50px;
+}
+
+  
+ 
+  
+  

@@ -10,12 +10,7 @@ function Footer() {
   return (
     <footer className='footer'>
       <div className="box">
-        <ul className='links'>
-          <li> <Link to="/about">HOME</Link></li>
-          <li> <Link to="/about">TJÄNSTER</Link></li>
-          <li> <Link to="/about">OM OSS</Link></li>
-          <li> <Link to="/about">Kontakt</Link></li>
-        </ul>
+        
       </div>
       <div className="box">
       <h2>News letter</h2>
