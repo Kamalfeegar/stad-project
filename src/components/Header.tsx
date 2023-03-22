@@ -1,6 +1,5 @@
 import React from 'react'
 import './Header.css'
-import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 import { Link } from 'react-router-dom';
 
 

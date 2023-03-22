@@ -9,7 +9,7 @@ import './LandingPage.css'
 function LandingPage() {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/bookinPage')
+    navigate('/bookinpage')
 
 
   } 
@@ -24,7 +24,8 @@ function LandingPage() {
 
       <div className='ibp'>
     <input type='text' className='postnummer' placeholder='POSTNUMMER'/>
-    <button className='postbtn' onClick={handleClick}>Gå Vidare</button>
+    <Link to="/bookingpage"><button className='postbtn' onClick={handleClick}>Gå Vidare</button></Link>
+    
       </div>
       
       <div className='inne'>

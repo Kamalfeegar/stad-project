@@ -10,13 +10,15 @@ import Footer from './components/Footer';
 
 function App() {
   return (
+    
     <Router>
       <Header/>
     <Routes>
     <Route path= '/' element={<LandingPage/>}/>
     <Route path= '/landingpage' element={<LandingPage/>}/>
       
-      <Route path='./bookingpage' element={<BookingsPage />} />
+    <Route path= '/' element={<BookingsPage/>}/>
+      <Route path='/bookingpage' element={<BookingsPage />} />
       
       
     </Routes>
