@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FetchAll from "../fetchApi/FetchAll";
 import axios from "axios";
 import IBooking from "../fetchApi/Interface";
+import Completed from "./Completed";
 
 
 function BookingsPage() {
@@ -35,7 +36,10 @@ function BookingsPage() {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const response = await axios.get("http://localhost:3000/clean");
+      const response = await axios.get<IBooking[]>("http://localhost:3000/clean");
+      const filteredBookings = response.data.filter(booking => booking.Status === false);
+      setBookings(filteredBookings);
+
       setBookings(response.data);
       console.log(response.data);
     };
@@ -120,6 +124,7 @@ function BookingsPage() {
 
       <h1>Utförda bokningar</h1>
       <p>Här kan du se en lista över dina Utförda bokade städningar</p>
+      <Completed></Completed>
 
       <Link to="/">Tillbaka till startsidan</Link>
     </div>
