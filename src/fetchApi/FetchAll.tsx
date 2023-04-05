@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../fetchApi/FetchAll.css";
 import IBooking from "../fetchApi/Interface";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 interface PropsType {
   bookings: IBooking[];
@@ -84,7 +86,7 @@ const CompletedBookings = (props: CompletedBookingsPropsType) => {
         </tbody>
       </table>
       <button onClick={handleDeleteClick} disabled={checkedIds.length === 0}>
-        Delete Selected
+      <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
       </button>
     </div>
   );
@@ -136,7 +138,7 @@ const Booking = (props: PropsType) => {
               <p className="h2">{booking.Level}</p>
               <h2 className="h2">{booking.Status}</h2>
               <h2 className="h2">{booking.Städare}</h2>
-              <button onClick={() => handleDelete(booking._id)}>Delete</button>
+              <button onClick={() => handleDelete(booking._id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button> 
               <button onClick={() => handleMoveToCompleted(booking._id)}>
                 Move to Completed
               </button>

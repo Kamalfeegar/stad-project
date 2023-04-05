@@ -5,6 +5,8 @@ import axios from "axios";
 import IBooking from "../fetchApi/Interface";
 import Dubbel from "./Error";
 import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 
 function BookingsPage() {
@@ -76,17 +78,19 @@ function BookingsPage() {
 
   return (
     <div>  <h1> Välkommen {name}!</h1>
-      <h1>Dina bokade städningar</h1>
+      <p> Vänligen boka en städare! </p> 
 
 
    
    <form onSubmit={handleSubmit}>
   
   <select id="names" name="names" value={städare} onChange={(e) => setStädare(e.target.value)}>
+  <option value=""></option>
   <option value="John">John</option>
   <option value="Mary">Mary</option>
   <option value="Peter">Peter</option>
   <option value="Lisa">Lisa</option>
+  
 </select>
 
 
@@ -147,7 +151,7 @@ function BookingsPage() {
       ></input>
       <label htmlFor="Fönster">Fönster</label>
       <br></br>
-      <button type="submit">Submit</button>
+      <button type="submit">Submit </button> 
 
       </form>
 

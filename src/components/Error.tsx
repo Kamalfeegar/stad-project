@@ -16,7 +16,7 @@ const RemovePTag = ({ onClose }: IProps) => {
   return (
     <div>
     <button onClick={handleClick}>OK</button>
-    <p style={{ color: "red", fontSize: "1.2em" }}>Existerar redan || Fel Info</p>
+    <p style={{ color: "red", fontSize: "1.2em" }}>Existerar redan </p>
     </div>
   )
   };
