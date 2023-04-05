@@ -1,18 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import './LandingPage.css'
-
-
+import axios from 'axios'
 
 
 function LandingPage() {
+  const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate('/bookinpage')
 
+  const handleInputChange = (event:any) => {
+    setInputValue(event.target.value);
+  };
 
-  } 
+  const handleSubmit = async (event:any) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:3000/clean/user', {
+        name: inputValue,
+      });
+      console.log(response.data);
+
+      navigate('/bookingpage', { state: { name: inputValue } });
+    } catch (error) {
+      console.error(error);
+    }
+  }; 
   return (
     
     <div className='article'>
@@ -28,9 +42,17 @@ function LandingPage() {
     <div/>
       <div className='ibp'>
     <input type='text' className='postnummer' placeholder='POSTNUMMER'/>
-    <Link to="/bookingpage"><button className='postbtn' onClick={handleClick}>Gå Vidare</button></Link>
     
       </div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={inputValue} onChange={handleInputChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+
+
       
       <div id='boxes'>
       <div className='box1'><img src="basic-cle.webp" height={200} width={200} alt="basic" /></div>

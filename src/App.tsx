@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import LandingPage from './components/LandingPage';
-import BookingsPage from './components/BookingPage';
+
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BookingsPage from './components/BookingPage';
+
 
 
 

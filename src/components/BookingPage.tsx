@@ -3,22 +3,49 @@ import { Link } from "react-router-dom";
 import FetchAll from "../fetchApi/FetchAll";
 import axios from "axios";
 import IBooking from "../fetchApi/Interface";
-import Completed from "./Completed";
+import Dubbel from "./Error";
+import { useLocation } from 'react-router-dom';
 
 
 function BookingsPage() {
+  const location = useLocation();
+  const name = location.state.name;
   const [level, setLevel] = useState("");
   const [städare, setStädare] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [bookings, setBookings] = useState<IBooking[]>([]);
-  
-
-
+  const [error, setError] = useState(false);
 
   
+  useEffect(() => {
+    const fetchBookings = async () => {
+      const response = await axios.get<IBooking[]>("http://localhost:3000/clean");
+      setBookings(response.data);
+    };
+    fetchBookings();
+  }, []);
+  useEffect(() => {
+    const fetchBookings = async () => {
+      const response = await axios.get("http://localhost:3000/clean/user");
+      console.log(response)
+    };
+    fetchBookings();
+  }, []);
 
   const postBookings = async () => {
+    const existingBooking = bookings.find(
+      (booking) =>
+        booking.Level === level &&
+        booking.Städare === städare &&
+        new Date(booking.Date).toLocaleDateString() === new Date(date).toLocaleDateString() &&
+        booking.Time === time
+    );
+
+    if (existingBooking) {
+      setError(true);
+      return;
+    }
     const response = await axios.post("http://localhost:3000/clean", {
       Level: level,
       Städare: städare,
@@ -32,25 +59,29 @@ function BookingsPage() {
     setDate("");
     setTime("");
     setLevel("");
+  }; const felMeddalande = () => {
+    setError(false);
   };
 
-  useEffect(() => {
-    const fetchBookings = async () => {
-      const response = await axios.get<IBooking[]>("http://localhost:3000/clean");
-      const filteredBookings = response.data.filter(booking => booking.Status === false);
-      setBookings(filteredBookings);
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    postBookings();
+  };
+  
+  
+  
+  
 
-      setBookings(response.data);
-      console.log(response.data);
-    };
-    fetchBookings();
-  }, []);
+
 
   return (
-    <div>
+    <div>  <h1> Välkommen {name}!</h1>
       <h1>Dina bokade städningar</h1>
 
-      
+
+   
+   <form onSubmit={handleSubmit}>
+  
   <select id="names" name="names" value={städare} onChange={(e) => setStädare(e.target.value)}>
   <option value="John">John</option>
   <option value="Mary">Mary</option>
@@ -66,12 +97,14 @@ function BookingsPage() {
         type="date"
         name="birth_date"
         onChange={(e) => setDate(e.target.value)}
+        required
       ></input>
       <input
         value={time}
         type="time"
         name="start_time"
         onChange={(e) => setTime(e.target.value)}
+        required
       ></input>
       <br></br>
       <input
@@ -114,17 +147,18 @@ function BookingsPage() {
       ></input>
       <label htmlFor="Fönster">Fönster</label>
       <br></br>
-      <button id="btn-1" onClick={() => postBookings()}>
-        Boka nu
-      </button>
+      <button type="submit">Submit</button>
+
+      </form>
+
+      {error && (
+        <Dubbel onClose={felMeddalande} />
+      )}
+
 
       <p>Här kan du se en lista över dina bokade städningar:</p>
       <FetchAll bookings={bookings} setBookings={setBookings}></FetchAll>
       <ul></ul>
-
-      <h1>Utförda bokningar</h1>
-      <p>Här kan du se en lista över dina Utförda bokade städningar</p>
-      <Completed></Completed>
 
       <Link to="/">Tillbaka till startsidan</Link>
     </div>
