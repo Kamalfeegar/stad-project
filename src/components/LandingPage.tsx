@@ -41,16 +41,15 @@ function LandingPage() {
 
     <div/>
       <div className='ibp'>
-    <input type='text' className='postnummer' placeholder='POSTNUMMER'/>
     
-      </div>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
-          <input type="text" value={inputValue} onChange={handleInputChange} />
+          <input type="text"  className='postnummer' placeholder='Skriv ditt namn' value={inputValue} onChange={handleInputChange} />
+          <br />
         </label>
-        <button type="submit">Submit</button>
+        <button className='push' type="submit">Submit</button>
       </form>
+      </div>
 
 
       
@@ -63,7 +62,7 @@ function LandingPage() {
       <div className='inne'>
         
       <div><h1>Basic</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
-      <div><h1>Topp</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
+      <div><h1>Top</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
       <div><h1>Diamant</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
       <div><h1>Fönsterputs</h1><br/><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque ad, amet similique sed odio? Incidunt sequi ducimus quia in eius at eaque, accusamus atque quos </h4></div>
       
